@@ -10,8 +10,8 @@ namespace ValidarCPF
     {
         static void Main(string[] args)
         {
-            int multi = 10;
-            int multi2 = 11, mult, soma = 0, soma2 = 0;
+           
+            int multi = 10, multi2 = 11, mult, mult2, soma = 0, soma2 = 0 , div;
             string num;
             char digito1, digito2;
 
@@ -20,28 +20,68 @@ namespace ValidarCPF
 
 
 
-            char[] cpf = new char[9];
+            char[] cpf = new char[11];
+            int[] numeroCPF = new int[11];
+            digito1 = cpf[9];
+            digito2 = cpf[10];
+
             for (int i = 0; i < 9; i++){
 
                 cpf[i] = num[i];
+                numeroCPF[i] = cpf[i];
 
             }
 
             for (int i = 0;i < 9; i++){
 
                 mult = cpf[i] * multi;
-                multi--;
+                multi --;
 
                 soma += mult;
             }
 
+            div = (soma * 10) % 11;
+
+            if (div == 10){
+
+                numeroCPF[9] = 0;
+
+            }else{
+
+                numeroCPF[9] = div;
+
+            }
+
+
             for (int i = 0; i < 10; i++)
             {
 
-                mult = cpf[i] * multi2;
+                mult2 = cpf[i] * multi2;
                 multi2--;
 
-                soma2 += mult;
+                soma2 += multi2;
+            }
+            div = (soma2 * 10) % 11;
+
+            if (div == 11)
+            {
+
+                numeroCPF[10] = 0;
+
+            }else{
+
+                numeroCPF[10] = div;
+
+            }
+
+
+            if(digito1 == numeroCPF[9] && digito2 == numeroCPF[10]){
+
+                Console.WriteLine("CPF Aprovado");
+
+            }else{
+
+                Console.WriteLine("CPF Negado");
             }
 
 
