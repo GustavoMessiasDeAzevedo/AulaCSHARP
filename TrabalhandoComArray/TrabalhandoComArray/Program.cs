@@ -21,6 +21,18 @@ namespace TrabalhandoComArray
                 Console.WriteLine(numerosCpf[i]);
 
             }
+
+
+
+            Console.WriteLine("====================================");
+
+            foreach(char numero in numerosCpf){
+
+                Console.WriteLine(numero);
+
+            }
+
+            int[] numeroInteiro = numerosCpf.Select(numero => Convert.ToInt32(numero.ToString())).ToArray();]
         }
     }
 }
