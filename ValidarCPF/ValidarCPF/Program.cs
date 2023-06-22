@@ -28,7 +28,7 @@ namespace ValidarCPF
             for (int i = 0; i < 9; i++){
 
                 cpf[i] = num[i];
-                numeroCPF[i] = cpf[i];
+                numeroCPF[i] = num[i];
 
             }
 
@@ -46,11 +46,13 @@ namespace ValidarCPF
 
                 numeroCPF[9] = 0;
 
-            }else{
-
+            }if else (div != 11){
                 numeroCPF[9] = div;
-
             }
+
+                
+
+            
 
 
             for (int i = 0; i < 10; i++)
