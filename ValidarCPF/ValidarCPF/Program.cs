@@ -13,9 +13,9 @@ namespace ValidarCPF
            
             int multi = 10, multi2 = 11, mult, mult2, soma = 0, soma2 = 0 , div, div2;
             string num;
+            char digito1, digito2, dig, dig2;
 
-
-            Console.WriteLine("Digite seu CPF");
+            Console.Write("Digite seu CPF (apenas números): ");
             num = Console.ReadLine();
 
 
@@ -24,12 +24,16 @@ namespace ValidarCPF
             int[] numeroCPF = new int[11];
 
 
-            for (int i = 0; i < 9; i++){
+            for (int i = 0; i <= 10; i++){
 
                 cpf[i] = num[i];
                 numeroCPF[i] = Convert.ToInt32(cpf[i].ToString());
 
             }
+
+                digito1 = cpf[9];
+                digito2 = cpf[10];
+
 
             for (int i = 0;i < 9; i++){
 
@@ -39,7 +43,7 @@ namespace ValidarCPF
                 soma += mult;
             }
 
-            div = (soma * 10) % 11;
+                div = (soma * 10) % 11;
          
             if (div == 10){
 
@@ -70,10 +74,11 @@ namespace ValidarCPF
 
             }
 
-            
-            
-            
-            if (cpf[9] == numeroCPF[9] && cpf[10] == numeroCPF[10]){
+            dig = Convert.ToChar(numeroCPF[9].ToString());
+            dig2 = Convert.ToChar(numeroCPF[10].ToString());
+
+
+            if (dig == digito1 && dig2 == digito2){
 
                 Console.WriteLine("CPF Aprovado");
 
