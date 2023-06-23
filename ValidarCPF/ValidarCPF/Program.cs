@@ -9,6 +9,12 @@ namespace ValidarCPF
             Console.Write("Digite seu CPF (apenas números): ");
             string num = Console.ReadLine();
 
+            if (!IsNumeric(num))
+            {
+                Console.WriteLine("Erro: O CPF deve conter apenas números.");
+                return;
+            }
+
             int[] numeroCPF = new int[11];
 
             for (int i = 0; i < 11; i++)
@@ -47,6 +53,18 @@ namespace ValidarCPF
             {
                 Console.WriteLine("CPF Negado");
             }
+        }
+
+        static bool IsNumeric(string value)
+        {
+            foreach (char c in value)
+            {
+                if (!char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
