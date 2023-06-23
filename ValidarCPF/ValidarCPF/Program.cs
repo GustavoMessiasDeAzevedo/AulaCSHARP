@@ -6,64 +6,81 @@ namespace ValidarCPF
     {
         static void Main(string[] args)
         {
-            Console.Write("Digite seu CPF (apenas números): ");
-            string num = Console.ReadLine();
 
-            if (!IsNumeric(num))
+            string confirmacao;
+            do
             {
-                Console.WriteLine("Erro: O CPF deve conter apenas números.");
-                return;
-            }
 
-            int[] numeroCPF = new int[11];
+                
+                Console.Write("Digite seu CPF (apenas números): ");
+                string num = Console.ReadLine();
 
-            for (int i = 0; i < 11; i++)
-            {
-                numeroCPF[i] = int.Parse(num[i].ToString());
-            }
+                if (!IsNumeric(num))
+                {
 
-            int soma = 0;
-            for (int i = 0; i < 9; i++)
-            {
-                soma += numeroCPF[i] * (10 - i);
-            }
+                    Console.WriteLine("Erro: O CPF deve conter apenas números.");
+                    break;
+                }
+                
 
-            int div = (soma * 10) % 11;
-            numeroCPF[9] = (div == 10) ? 0 : div;
+                int[] numeroCPF = new int[11];
 
-            int soma2 = 0;
-            for (int i = 0; i < 10; i++)
-            {
-                soma2 += numeroCPF[i] * (11 - i);
-            }
+                for (int i = 0; i < 11; i++)
+                {
+                    numeroCPF[i] = int.Parse(num[i].ToString());
+                }
 
-            int div2 = (soma2 * 10) % 11;
-            numeroCPF[10] = (div2 == 11) ? 0 : div2;
+                int soma = 0;
+                for (int i = 0; i < 9; i++)
+                {
+                    soma += numeroCPF[i] * (10 - i);
+                }
 
-            char digito1 = num[9];
-            char digito2 = num[10];
-            char dig = Convert.ToChar(numeroCPF[9].ToString());
-            char dig2 = Convert.ToChar(numeroCPF[10].ToString());
+                int div = (soma * 10) % 11;
+                numeroCPF[9] = (div == 10) ? 0 : div;
 
-            if (dig == digito1 && dig2 == digito2)
-            {
-                Console.WriteLine("CPF Aprovado");
-            }
-            else
-            {
-                Console.WriteLine("CPF Negado");
-            }
+                int soma2 = 0;
+                for (int i = 0; i < 10; i++)
+                {
+                    soma2 += numeroCPF[i] * (11 - i);
+                }
+                int div2 = (soma2 * 10) % 11;
+
+                numeroCPF[10] = (div2 == 11) ? 0 : div2;
+
+                char digito1 = num[9];
+                char digito2 = num[10];
+                char dig = Convert.ToChar(numeroCPF[9].ToString());
+                char dig2 = Convert.ToChar(numeroCPF[10].ToString());
+
+                if (dig == digito1 && dig2 == digito2)
+                {
+                    Console.WriteLine("CPF Aprovado");
+                    break;
+                }
+                else
+                {
+
+                    Console.WriteLine("CPF Negado");
+                    
+                }
+                Console.WriteLine("Deseja Tentar novamente?");
+                confirmacao = Console.ReadLine();
+
+            } while (confirmacao == "sim" || confirmacao == "Sim" || confirmacao == "S" || confirmacao == "s");
+            
         }
 
         static bool IsNumeric(string value)
         {
-            foreach (char c in value)
-            {
-                if (!char.IsDigit(c))
+           
+                foreach (char c in value)
                 {
-                    return false;
+                    if (!char.IsDigit(c))
+                    {
+                        return false;
+                    }
                 }
-            }
             return true;
         }
     }
