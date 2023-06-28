@@ -93,8 +93,6 @@ namespace validar_cnpj
             return resultado;
         }
 
-        
-
         static bool ContemLetras(string value)
         {
             foreach (char c in value)
