@@ -31,7 +31,7 @@
             this.LblDigiteCPF = new System.Windows.Forms.Label();
             this.Lbl = new System.Windows.Forms.Label();
             this.btnValidarCPF = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtGerarCPF = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.btnGeradorCPF = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -69,13 +69,13 @@
             this.btnValidarCPF.UseVisualStyleBackColor = true;
             this.btnValidarCPF.Click += new System.EventHandler(this.btnValidarCPF_Click);
             // 
-            // textBox2
+            // txtGerarCPF
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(97, 293);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(420, 62);
-            this.textBox2.TabIndex = 5;
+            this.txtGerarCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGerarCPF.Location = new System.Drawing.Point(97, 293);
+            this.txtGerarCPF.Name = "txtGerarCPF";
+            this.txtGerarCPF.Size = new System.Drawing.Size(420, 62);
+            this.txtGerarCPF.TabIndex = 5;
             // 
             // txtCPF
             // 
@@ -94,6 +94,7 @@
             this.btnGeradorCPF.TabIndex = 7;
             this.btnGeradorCPF.Text = "Gerar CPF";
             this.btnGeradorCPF.UseVisualStyleBackColor = true;
+            this.btnGeradorCPF.Click += new System.EventHandler(this.btnGeradorCPF_Click);
             // 
             // Form1
             // 
@@ -102,7 +103,7 @@
             this.ClientSize = new System.Drawing.Size(635, 473);
             this.Controls.Add(this.btnGeradorCPF);
             this.Controls.Add(this.txtCPF);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtGerarCPF);
             this.Controls.Add(this.btnValidarCPF);
             this.Controls.Add(this.Lbl);
             this.Controls.Add(this.LblDigiteCPF);
@@ -118,7 +119,7 @@
         private System.Windows.Forms.Label LblDigiteCPF;
         private System.Windows.Forms.Label Lbl;
         private System.Windows.Forms.Button btnValidarCPF;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtGerarCPF;
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Button btnGeradorCPF;
     }
