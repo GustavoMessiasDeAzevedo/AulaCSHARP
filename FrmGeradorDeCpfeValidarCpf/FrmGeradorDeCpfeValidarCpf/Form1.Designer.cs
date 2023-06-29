@@ -74,6 +74,7 @@
             this.txtGerarCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGerarCPF.Location = new System.Drawing.Point(97, 293);
             this.txtGerarCPF.Name = "txtGerarCPF";
+            this.txtGerarCPF.ReadOnly = true;
             this.txtGerarCPF.Size = new System.Drawing.Size(420, 62);
             this.txtGerarCPF.TabIndex = 5;
             // 
@@ -108,6 +109,7 @@
             this.Controls.Add(this.Lbl);
             this.Controls.Add(this.LblDigiteCPF);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

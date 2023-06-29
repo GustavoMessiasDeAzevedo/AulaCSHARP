@@ -44,9 +44,11 @@ namespace AlgoritmosDiversosCsharp
             if(listaDeCompra.Count == 0) {
 
                 Console.WriteLine("A lista ta vazia");
+            }else{
+                ImprimirLista(listaDeCompra);
             }
 
-            ImprimirLista(listaDeCompra);
+            
 
             //Imprimir a lista, porem caso esteja vazia, retornar o texto "A lista ta vazia",
             //caso contrario imprimir todos os itens na tela

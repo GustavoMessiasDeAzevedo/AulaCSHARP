@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,12 +22,30 @@ namespace FrmGeradorDeCpfeValidarCpf
         {
 
             string numeroString = txtCPF.Text;
+
+
+            if (numeroString.Length == 0)
+            {
+                MessageBox.Show("Por favor preencha o campo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             int[] numeroCPF = new int[11];
 
 
-            for(int i = 0; i < 11; i++) {
+            string CPFsemMascara = RemoverCaracteresEspeciais(numeroString);
 
-                numeroCPF[i] = int.Parse(numeroString[i].ToString());
+            if (Letras(numeroString)){
+
+                MessageBox.Show("O CPF deve conter apenas numeros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+        
+
+            for (int i = 0; i < 11; i++) {
+
+                numeroCPF[i] = int.Parse(CPFsemMascara[i].ToString());
             }
 
             
@@ -40,7 +59,7 @@ namespace FrmGeradorDeCpfeValidarCpf
 
             int div = (soma * 10) % 11;
 
-            if (div == 10) {
+            if (div == 10 || div == 11) {
                 numeroCPF[9] = 0;
             }else {
                 numeroCPF[9] = div;
@@ -56,7 +75,7 @@ namespace FrmGeradorDeCpfeValidarCpf
             }
 
             int div2 = (soma2 * 10) % 11;
-            if (div2 == 11)
+            if (div2 == 10 || div2 == 11)
             {
                 numeroCPF[10] = 0;
             }
@@ -65,8 +84,8 @@ namespace FrmGeradorDeCpfeValidarCpf
                 numeroCPF[10] = div2;
             }
 
-            char digito1 = numeroString[9];
-            char digito2 = numeroString[10];
+            char digito1 = CPFsemMascara[9];
+            char digito2 = CPFsemMascara[10];
             char dig = Convert.ToChar(numeroCPF[9].ToString());
             char dig2 = Convert.ToChar(numeroCPF[10].ToString());
 
@@ -90,7 +109,7 @@ namespace FrmGeradorDeCpfeValidarCpf
 
             Random random = new Random();
 
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 11; i++)
             {
                 cpfArray[i] = random.Next(0, 10);
             }
@@ -108,9 +127,10 @@ namespace FrmGeradorDeCpfeValidarCpf
 
             int div = (soma * 10) % 11;
 
-            if (div == 10)
+            if (div == 10 || div == 11)
             {
                 cpfArray[9] = 0;
+
             }
             else
             {
@@ -124,7 +144,7 @@ namespace FrmGeradorDeCpfeValidarCpf
             }
 
             int div2 = (soma2 * 10) % 11;
-            if (div2 == 11)
+            if (div2 == 10 || div2 == 11)
             {
                 cpfArray[10] = 0;
             }
@@ -133,12 +153,37 @@ namespace FrmGeradorDeCpfeValidarCpf
                 cpfArray[10] = div2;
             }
 
-            string cpfNovo = $"{numeroCPF[0]}{numeroCPF[1]}{numeroCPF[2]}.{numeroCPF[3]}{numeroCPF[4]}{numeroCPF[5]}.{numeroCPF[6]}{numeroCPF[7]}{numeroCPF[8]}-{numeroCPF[9]}{numeroCPF[10]}";
+            string cpfNovo = $"{numeroCPF[0]}{numeroCPF[1]}{numeroCPF[2]}.{numeroCPF[3]}{numeroCPF[4]}{numeroCPF[5]}.{numeroCPF[6]}{numeroCPF[7]}{numeroCPF[8]}-{cpfArray[9]}{cpfArray[10]}";
 
             txtGerarCPF.Text = cpfNovo;
 
 
 
         }
+        static string RemoverCaracteresEspeciais(string input)
+        {
+
+            string resultado = Regex.Replace(input, @"[^0-9]", "");
+            return resultado;
+
+        }
+
+
+        static bool Letras (string value){
+
+            foreach(char c in value) {  
+            
+                if (char.IsLetter(c))
+                {
+                    return true;
+                }
+
+               
+            
+            }
+            return false;
+        }
+    
+    
     }
 }
