@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>AlgoritmosDiversosCsharp.LacoDeRepeticao</StartupObject>
+    <StartupObject>AlgoritmosDiversosCsharp.ListadeCompras</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -48,8 +48,11 @@
   <ItemGroup>
     <Compile Include="EstruturaCondicional.cs" />
     <Compile Include="LacoDeRepeticao.cs" />
+    <Compile Include="ListadeCompras.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrabalhandoArray.cs" />
+    <Compile Include="TrabalhandoLista.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
