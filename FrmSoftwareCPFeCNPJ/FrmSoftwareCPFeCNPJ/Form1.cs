@@ -133,7 +133,7 @@ namespace FrmSoftwareCPFeCNPJ
         private void validarCPFECNPJToolStripMenuItem_Click(object sender, EventArgs e)
         {
          BtnGerar.Hide();
-        BtnValidar.Show();
+         BtnValidar.Show();
          txtCPForCNPJ.Clear();
         
         }

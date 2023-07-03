@@ -63,6 +63,7 @@
             this.txtCPForCNPJ.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtCPForCNPJ.Location = new System.Drawing.Point(173, 161);
             this.txtCPForCNPJ.Name = "txtCPForCNPJ";
+            this.txtCPForCNPJ.ReadOnly = true;
             this.txtCPForCNPJ.Size = new System.Drawing.Size(362, 47);
             this.txtCPForCNPJ.TabIndex = 2;
             // 
@@ -140,14 +141,14 @@
             // validarCPFECNPJToolStripMenuItem
             // 
             this.validarCPFECNPJToolStripMenuItem.Name = "validarCPFECNPJToolStripMenuItem";
-            this.validarCPFECNPJToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.validarCPFECNPJToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.validarCPFECNPJToolStripMenuItem.Text = "Validar CPF e CNPJ";
             this.validarCPFECNPJToolStripMenuItem.Click += new System.EventHandler(this.validarCPFECNPJToolStripMenuItem_Click);
             // 
             // gerarCPFToolStripMenuItem
             // 
             this.gerarCPFToolStripMenuItem.Name = "gerarCPFToolStripMenuItem";
-            this.gerarCPFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gerarCPFToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.gerarCPFToolStripMenuItem.Text = "Gerar CPF";
             this.gerarCPFToolStripMenuItem.Click += new System.EventHandler(this.gerarCPFToolStripMenuItem_Click);
             // 
