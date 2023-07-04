@@ -28,7 +28,7 @@ namespace OrientacaoObjeto
             Console.WriteLine("===============================================");
             foreach (var livro in catalogo)
             {
-                Console.WriteLine("Identificação: {0:4}  |  {1}  |  Preço: {2:C} ", livro.IdLivro, livro.Titulo, livro.Preco) ;
+                Console.WriteLine("Identificação: {0}  |  {1:500000}  |  Preço: {2:C} ", livro.IdLivro, livro.Titulo, livro.Preco) ;
             }
             Console.WriteLine("===============================================");
             Console.WriteLine("Total de livros: {0}", catalogo.Count());
