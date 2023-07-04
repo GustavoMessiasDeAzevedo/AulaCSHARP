@@ -12,7 +12,7 @@ namespace FrmLoginProjeto
 {
     public partial class Form1 : Form
     {
-        private List<string> listaEmail = new List<string>(); // Mover a declaração das listas para o escopo da classe
+        private List<string> listaEmail = new List<string>(); 
         private List<string> listaSenha = new List<string>();
 
         public Form1()
@@ -47,7 +47,7 @@ namespace FrmLoginProjeto
             string email = txtEmail.Text;
             string senha = txtSenha.Text;
 
-            if (listaEmail.Contains(email) && listaSenha.Contains(senha)) // Corrigir a condição de verificação
+            if (listaEmail.Contains(email) && listaSenha.Contains(senha)) 
             {
                 MessageBox.Show("Login bem-sucedido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
