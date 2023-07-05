@@ -8,5 +8,14 @@ namespace AtividadeOrientadaObjeto
 {
     internal class Produto
     {
+
+        public string NomeProduto;
+        public double Preco;
+
+        public Produto(string nomeProduto = "", double preco = 0.0)
+        {
+            NomeProduto = nomeProduto;
+            Preco = preco;
+        }
     }
 }
