@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DA8BFEB6-AC5D-4CCD-AFD6-F02D70574BCF}</ProjectGuid>
+    <ProjectGuid>{2DFDB7EF-07A2-439F-AE7F-23E5FDD1D314}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>AtividadeOrientadaObjeto</RootNamespace>
-    <AssemblyName>AtividadeOrientadaObjeto</AssemblyName>
+    <RootNamespace>AtividadeObjeto</RootNamespace>
+    <AssemblyName>AtividadeObjeto</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>AtividadeOrientadaObjeto.Program</StartupObject>
+    <StartupObject>AtividadeObjeto.Venda</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Venda.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
