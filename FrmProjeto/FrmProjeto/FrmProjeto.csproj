@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{57567143-C444-4356-B565-C8B280B95238}</ProjectGuid>
+    <ProjectGuid>{CD328E70-9406-4E27-B2D2-5DDAE04F4E5A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>FrmLoginProjeto</RootNamespace>
-    <AssemblyName>FrmLoginProjeto</AssemblyName>
+    <RootNamespace>FrmProjeto</RootNamespace>
+    <AssemblyName>FrmProjeto</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,20 +52,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaginaInicial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PaginaInicial.Designer.cs">
-      <DependentUpon>PaginaInicial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PaginaInicial.resx">
-      <DependentUpon>PaginaInicial.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

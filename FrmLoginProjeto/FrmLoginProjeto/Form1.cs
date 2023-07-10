@@ -50,6 +50,10 @@ namespace FrmLoginProjeto
             if (listaEmail.Contains(email) && listaSenha.Contains(senha)) 
             {
                 MessageBox.Show("Login bem-sucedido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PaginaInicial paginaInicial = new PaginaInicial();
+                paginaInicial.Show(); 
+                Form1 form1 = new Form1();
+                form1.Close();
             }
             else
             {
