@@ -11,33 +11,28 @@ namespace AtividadeObjeto
 
         public string Nome;
         public int Preco;
-        public int Quantidade;
+
         public int total;
+        private List<string> nome;
 
-        public List<Produto> Produtos;
 
-
-        public void AdicionarProduto()
+        public Produto(string nome = "", int preco = 0, int Total = 0)
         {
-            Produtos
+            Nome = nome;
+            Preco = preco;
+            total = Total;
         }
+
+ 
 
         public void ImprimirDetalhesProduto()
         {
-            Console.WriteLine("====================");
-            Console.WriteLine("Nome produto: {0}", Nome);
-            Console.WriteLine("Preço: {0}", Preco);
-            Console.WriteLine("Quantidade comprada: {0}", Quantidade);
+ 
+            Console.WriteLine("Total: {0}", total);
             Console.WriteLine("====================");
         }
 
 
-        public void CalcularPreco()
-        {
-            total = Preco * Quantidade;
-
-            Console.WriteLine("O total da compra foi: {0}", total);
-            
-        }
+  
     }
 }

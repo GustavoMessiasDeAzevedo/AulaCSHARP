@@ -18,9 +18,9 @@ namespace AtividadeObjeto
         }
 
 
-        public void ImprimirDetalhes()
+        public void  ImprimirDetalhes()
         {
-            Console.WriteLine("====================");
+         
             Console.WriteLine("Id cliente: {0}", IdCliente);
             Console.WriteLine("Nome Cliente: {0}", Nome);
             Console.WriteLine("====================");
