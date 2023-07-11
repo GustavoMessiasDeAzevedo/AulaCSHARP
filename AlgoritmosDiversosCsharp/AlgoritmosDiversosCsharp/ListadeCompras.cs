@@ -39,13 +39,16 @@ namespace AlgoritmosDiversosCsharp
 
             }
 
-            Console.WriteLine("----- Sua lista de compras -----");
+            Console.WriteLine("-----------------");
+            Console.WriteLine("  Cupom Fiscal  ");
+            Console.WriteLine("-----------------");
 
-            if(listaDeCompra.Count == 0) {
+            if (listaDeCompra.Count == 0) {
 
                 Console.WriteLine("A lista ta vazia");
             }else{
                 ImprimirLista(listaDeCompra);
+                Console.WriteLine("-----------------");
             }
 
             
