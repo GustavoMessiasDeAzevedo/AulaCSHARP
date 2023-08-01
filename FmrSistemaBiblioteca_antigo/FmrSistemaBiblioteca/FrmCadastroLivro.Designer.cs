@@ -121,7 +121,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(187, 26);
             this.textBox3.TabIndex = 7;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+
             // 
             // textBox4
             // 
@@ -178,7 +178,7 @@
             this.button4.TabIndex = 13;
             this.button4.Text = "Pesquisar";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+        
             // 
             // textBox6
             // 

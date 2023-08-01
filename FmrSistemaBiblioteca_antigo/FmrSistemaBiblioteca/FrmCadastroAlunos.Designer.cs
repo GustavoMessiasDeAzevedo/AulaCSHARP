@@ -69,7 +69,6 @@
             this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Email";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -194,6 +193,7 @@
             this.btnAdicionar.TabIndex = 15;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnAtualizar
             // 
@@ -204,7 +204,6 @@
             this.btnAtualizar.TabIndex = 16;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnExcluir
             // 

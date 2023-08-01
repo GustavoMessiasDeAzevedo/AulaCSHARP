@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FmrSistemaBiblioteca.Properties
+namespace SistemaBiblioteca.Properties
 {
 
 

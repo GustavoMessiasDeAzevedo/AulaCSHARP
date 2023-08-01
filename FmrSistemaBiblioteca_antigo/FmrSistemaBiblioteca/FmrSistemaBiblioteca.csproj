@@ -58,7 +58,6 @@
     <Compile Include="FrmCadastroLivro.Designer.cs">
       <DependentUpon>FrmCadastroLivro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCadastroAlunos.resx">
       <DependentUpon>FrmCadastroAlunos.cs</DependentUpon>
