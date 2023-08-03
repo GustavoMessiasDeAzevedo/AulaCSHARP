@@ -96,6 +96,29 @@ namespace SistemaBiblioteca
                 linhaSelecionada = dgvLivro.Rows[e.RowIndex];
 
                 txtISBN.Text = linhaSelecionada.Cells["isbn"].Value.ToString();
+                txtPreco.Text = linhaSelecionada.Cells["Preço"].Value.ToString();
+                txtNumeroPagina.Text = linhaSelecionada.Cells["N° Página"].Value.ToString();
+                txtAnoPublicacao.Text = linhaSelecionada.Cells["Ano de publicação"].Value.ToString();
+                txtAutor.Text = linhaSelecionada.Cells["autor"].Value.ToString();
+                txtTitulo.Text = linhaSelecionada.Cells["titulo"].Value.ToString();
+            }
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(linhaSelecionada.Cells["id"].Value.ToString());
+
+                string sql = "UPDATE livros SET" + "titulo=@titulo" + "autor=@autor" + "numero_pagina=@numero_pagina" + "preco=@preco" + "ano_publicacao=@ano_publicacao" + "isbn=@isbn" + "WHERE id=@id";
+
+                SqlCommand sqlCmd = new SqlCommand(sql, conexaoDB);
+
+                sqlCmd.Parameters.AddWithValue("@id", id);
+                sqlCmd.Parameters.AddWithValue("@titulo", txtTitulo.Text);
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar os dados: " + ex);
             }
         }
     }
