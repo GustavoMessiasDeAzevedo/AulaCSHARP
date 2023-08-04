@@ -66,7 +66,7 @@ namespace SistemaBiblioteca
                 }
                 else
                 {
-                    sql = "SELECT * FROM aluno WHERE id="+id;
+                    sql = "SELECT * FROM alunos WHERE id="+id;
                 }
                
 

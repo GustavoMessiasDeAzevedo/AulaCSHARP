@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,13 +29,24 @@ namespace SistemaBiblioteca
             conexaoDB = new SqlConnection(conexaoString);
         }
 
-        public  void carregarDadosLivros()
+        public  void carregarDadosLivros(int id = 0)
         {
             try
             {
-                string sql = "select * from livros";
-
                 conexaoDB.Open();
+
+                string sql;
+
+                if(id == 0)
+                {
+                    sql = "select * from livros";
+                }
+                else
+                {
+                    sql = "select * from livros WHERE id=" + id;
+                }
+
+                
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, conexaoDB);
                 DataTable dataTable = new DataTable();
@@ -110,16 +122,97 @@ namespace SistemaBiblioteca
             {
                 int id = Convert.ToInt32(linhaSelecionada.Cells["id"].Value.ToString());
 
-                string sql = "UPDATE livros SET" + "titulo=@titulo" + "autor=@autor" + "numero_pagina=@numero_pagina" + "preco=@preco" + "ano_publicacao=@ano_publicacao" + "isbn=@isbn" + "WHERE id=@id";
+                string sql = "UPDATE livros SET " +
+                    " titulo=@titulo, " +
+                    "autor=@autor, " +
+                    " numero_pagina=@numero_pagina, " +
+                    " preco=@preco, " +
+                    " ano_publicacao=@ano_publicacao, " +
+                    " isbn=@isbn " +
+                    "WHERE id=@id";
 
+                conexaoDB.Open();
                 SqlCommand sqlCmd = new SqlCommand(sql, conexaoDB);
 
                 sqlCmd.Parameters.AddWithValue("@id", id);
                 sqlCmd.Parameters.AddWithValue("@titulo", txtTitulo.Text);
-            }catch (Exception ex)
+                sqlCmd.Parameters.AddWithValue("@autor", txtAutor.Text);
+                sqlCmd.Parameters.AddWithValue("@numero_pagina", Convert.ToInt32(txtNumeroPagina.Text));
+                sqlCmd.Parameters.AddWithValue("@preco", Convert.ToDecimal(txtPreco.Text));
+                sqlCmd.Parameters.AddWithValue("@ano_publicacao", Convert.ToInt32(txtAnoPublicacao.Text));
+                sqlCmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
+
+
+                sqlCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Atualização Realizada com Sucesso!!!");
+
+                conexaoDB.Close();
+
+                carregarDadosLivros();
+
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar os dados: " + ex);
             }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if(linhaSelecionada != null)
+            {
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja exlcuir o Livro", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+                if(resultado == DialogResult.Yes)
+                {
+                    try
+                    {
+                        int id = Convert.ToInt32(linhaSelecionada.Cells["id"].Value.ToString());
+
+                        string sql = "DELETE FROM livros " +
+                            "WHERE id=@id";
+
+                        conexaoDB.Open();
+
+                        SqlCommand sqlCmd = new SqlCommand(sql, conexaoDB);
+
+                        sqlCmd.Parameters.AddWithValue("@id", id);
+                        sqlCmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Livro excluido com Sucesso!!!");
+
+                        conexaoDB.Close();
+
+                        carregarDadosLivros();
+                    }
+                    catch(SqlException ex)
+                    {
+                        MessageBox.Show("Erro ao Excluir os Dados: " + ex);
+                    }
+                }
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            int id;
+
+            if(int.TryParse(txtPesquisar.Text, out id))
+            {
+                carregarDadosLivros(id);
+            }
+            else
+            {
+                MessageBox.Show("Código do livro inválido");
+            }
+        }
+
+        private void txtPesquisar_KeyUp(object sender, KeyEventArgs e)
+        {
+            carregarDadosLivros();
         }
     }
 }
