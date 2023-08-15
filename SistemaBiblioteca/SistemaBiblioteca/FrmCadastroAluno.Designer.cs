@@ -205,7 +205,7 @@
             // 
             this.txtDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDataNascimento.Location = new System.Drawing.Point(556, 71);
-            this.txtDataNascimento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDataNascimento.Margin = new System.Windows.Forms.Padding(2);
             this.txtDataNascimento.Mask = "00/00/0000";
             this.txtDataNascimento.Name = "txtDataNascimento";
             this.txtDataNascimento.Size = new System.Drawing.Size(175, 26);
@@ -216,7 +216,7 @@
             // 
             this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCPF.Location = new System.Drawing.Point(482, 28);
-            this.txtCPF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCPF.Margin = new System.Windows.Forms.Padding(2);
             this.txtCPF.Mask = "000\\.000\\.000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(250, 26);
@@ -226,7 +226,7 @@
             // 
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.Location = new System.Drawing.Point(81, 116);
-            this.txtTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefone.Mask = "(00) 0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(179, 26);
@@ -236,7 +236,7 @@
             // 
             this.txtCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular.Location = new System.Drawing.Point(316, 116);
-            this.txtCelular.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCelular.Margin = new System.Windows.Forms.Padding(2);
             this.txtCelular.Mask = "(00) 00000-0000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(179, 26);

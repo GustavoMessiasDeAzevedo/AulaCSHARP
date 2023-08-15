@@ -32,6 +32,8 @@
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.livrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.empréstimoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +44,8 @@
             this.cadastrarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -50,32 +53,48 @@
             // 
             this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alunosToolStripMenuItem,
-            this.livrosToolStripMenuItem});
+            this.livrosToolStripMenuItem,
+            this.cadastrarToolStripMenuItem1,
+            this.empréstimoToolStripMenuItem});
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // alunosToolStripMenuItem
             // 
             this.alunosToolStripMenuItem.Name = "alunosToolStripMenuItem";
-            this.alunosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.alunosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alunosToolStripMenuItem.Text = "Alunos";
             this.alunosToolStripMenuItem.Click += new System.EventHandler(this.alunosToolStripMenuItem_Click);
             // 
             // livrosToolStripMenuItem
             // 
             this.livrosToolStripMenuItem.Name = "livrosToolStripMenuItem";
-            this.livrosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.livrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.livrosToolStripMenuItem.Text = "Livros";
             this.livrosToolStripMenuItem.Click += new System.EventHandler(this.livrosToolStripMenuItem_Click);
             // 
+            // cadastrarToolStripMenuItem1
+            // 
+            this.cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
+            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarToolStripMenuItem1.Text = "Cadastrar";
+            // 
+            // empréstimoToolStripMenuItem
+            // 
+            this.empréstimoToolStripMenuItem.Name = "empréstimoToolStripMenuItem";
+            this.empréstimoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empréstimoToolStripMenuItem.Text = "Empréstimo";
+            this.empréstimoToolStripMenuItem.Click += new System.EventHandler(this.empréstimoToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPrincipal";
             this.Text = "Sistemas Biblioteca";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -92,5 +111,7 @@
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alunosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem livrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem empréstimoToolStripMenuItem;
     }
 }

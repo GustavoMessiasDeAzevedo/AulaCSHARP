@@ -28,5 +28,11 @@ namespace SistemaBiblioteca
             FrmCadastroLivro frmCadastroLivro = new FrmCadastroLivro(); 
             frmCadastroLivro.ShowDialog();
         }
+
+        private void empréstimoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEmprestimoLivro frmEmprestimoLivro = new FrmEmprestimoLivro();
+            frmEmprestimoLivro.ShowDialog();
+        }
     }
 }

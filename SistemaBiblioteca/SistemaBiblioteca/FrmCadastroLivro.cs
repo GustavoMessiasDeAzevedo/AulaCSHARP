@@ -85,6 +85,7 @@ namespace SistemaBiblioteca
 
                 conexaoDB.Open();
                 sqlCmd.ExecuteNonQuery();
+                carregarDadosLivros();
                 MessageBox.Show("Cadastro realizado com sucesso ");
 
 
@@ -170,10 +171,10 @@ namespace SistemaBiblioteca
                 {
                     try
                     {
-                        int id = Convert.ToInt32(linhaSelecionada.Cells["id"].Value.ToString());
+                        int id = Convert.ToInt32(linhaSelecionada.Cells["ID"].Value.ToString());
 
                         string sql = "DELETE FROM livros " +
-                            "WHERE id=@id";
+                            "WHERE ID=@id";
 
                         conexaoDB.Open();
 

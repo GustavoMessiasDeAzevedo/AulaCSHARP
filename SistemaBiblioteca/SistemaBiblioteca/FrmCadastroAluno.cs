@@ -207,10 +207,10 @@ namespace SistemaBiblioteca
 
                     try
                     {
-                        int id = Convert.ToInt32(registroSelecionado.Cells["id"].Value.ToString());
+                        int id = Convert.ToInt32(registroSelecionado.Cells["ID"].Value.ToString());
 
                         string sql = "DELETE FROM alunos " +
-                                     "WHERE id=@id";
+                                     "WHERE ID=@id";
 
                         conexaoDB.Open();
 
@@ -253,6 +253,6 @@ namespace SistemaBiblioteca
             carregarDadosAlunos();
         }
 
-       
+        
     }
 }
